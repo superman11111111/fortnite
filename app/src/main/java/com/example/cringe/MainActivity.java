@@ -343,16 +343,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onConnectionInfoAvailable(WifiP2pInfo wifiP2pInfo) {
+        if (wifiP2pInfo == null || wifiP2pInfo.groupOwnerAddress == null) {
+            Log.d(TAG, "No wifiP2pInfo info");
+            makeToast("Please connect to a device first");
+            return;
+        }
         String hostAddress = wifiP2pInfo.groupOwnerAddress.getHostAddress();
-
-        /*
-
-        makeToast("Am I group owner : " + String.valueOf(wifiP2pInfo.isGroupOwner));
         makeToast(hostAddress);
-
-        */
-        Log.d(MainActivity.TAG, "wifiP2pInfo.groupOwnerAddress.getHostAddress() " + wifiP2pInfo.groupOwnerAddress.getHostAddress());
-        IP = wifiP2pInfo.groupOwnerAddress.getHostAddress();
+        Log.d(MainActivity.TAG, "wifiP2pInfo.groupOwnerAddress.getHostAddress() " + hostAddress);
+        IP = hostAddress;
         IS_OWNER = wifiP2pInfo.isGroupOwner;
 
         if (IS_OWNER) {
