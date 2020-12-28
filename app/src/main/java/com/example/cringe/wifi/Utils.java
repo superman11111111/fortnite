@@ -1,4 +1,4 @@
-package com.example.cringe;
+package com.example.cringe.wifi;
 
 
 public class Utils {

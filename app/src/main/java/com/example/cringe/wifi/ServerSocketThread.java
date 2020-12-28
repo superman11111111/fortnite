@@ -1,4 +1,4 @@
-package com.example.cringe;
+package com.example.cringe.wifi;
 
 import android.os.AsyncTask;
 import android.util.Log;

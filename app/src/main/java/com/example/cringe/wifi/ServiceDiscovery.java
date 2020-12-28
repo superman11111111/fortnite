@@ -1,4 +1,4 @@
-package com.example.cringe;
+package com.example.cringe.wifi;
 
 import android.annotation.SuppressLint;
 import android.net.wifi.p2p.WifiP2pDevice;

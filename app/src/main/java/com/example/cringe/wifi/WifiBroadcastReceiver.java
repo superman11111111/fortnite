@@ -1,4 +1,4 @@
-package com.example.cringe;
+package com.example.cringe.wifi;
 
 import android.annotation.SuppressLint;
 import android.content.BroadcastReceiver;
@@ -17,10 +17,10 @@ public class WifiBroadcastReceiver extends BroadcastReceiver {
 
     private WifiP2pManager mManager;
     private WifiP2pManager.Channel mChannel;
-    private MainActivity mActivity;
+    private WifiP2PFrag mActivity;
 
     public WifiBroadcastReceiver(WifiP2pManager manager, WifiP2pManager.Channel channel,
-                                 MainActivity activity) {
+                                 WifiP2PFrag activity) {
         super();
         this.mManager = manager;
         this.mChannel = channel;

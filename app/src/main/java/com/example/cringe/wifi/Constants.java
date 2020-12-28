@@ -1,4 +1,4 @@
-package com.example.cringe;
+package com.example.cringe.wifi;
 
 public class Constants {
     public static final int DISCOVERY_INITATITED = 0;

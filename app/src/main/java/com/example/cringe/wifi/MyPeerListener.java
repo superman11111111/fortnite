@@ -1,9 +1,11 @@
-package com.example.cringe;
+package com.example.cringe.wifi;
 
 import android.net.wifi.p2p.WifiP2pDevice;
 import android.net.wifi.p2p.WifiP2pDeviceList;
 import android.net.wifi.p2p.WifiP2pManager;
 import android.util.Log;
+
+import com.example.cringe.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +17,10 @@ import java.util.List;
 public class MyPeerListener implements WifiP2pManager.PeerListListener {
     public static final String TAG = "===MyPeerListener";
     private List<WifiP2pDevice> peers = new ArrayList<WifiP2pDevice>();
-    public MainActivity mainActivity;
+    public WifiP2PFrag activity;
 
-    public MyPeerListener(MainActivity mainActivity) {
-        this.mainActivity = mainActivity;
+    public MyPeerListener(WifiP2PFrag activity) {
+        this.activity = activity;
         Log.d(MyPeerListener.TAG,"MyPeerListener object created");
 
     }
@@ -41,8 +43,8 @@ public class MyPeerListener implements WifiP2pManager.PeerListListener {
                 deviceDetails.add(device);
                 Log.d(MyPeerListener.TAG, "Found device :" + device.deviceName + " " + device.deviceAddress);
             }
-            if(mainActivity != null) {
-                mainActivity.setDeviceList(deviceDetails);
+            if(activity != null) {
+                activity.setDeviceList(deviceDetails);
             }
 
         }
